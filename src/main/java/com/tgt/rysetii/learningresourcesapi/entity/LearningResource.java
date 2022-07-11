@@ -1,13 +1,14 @@
 package com.tgt.rysetii.learningresourcesapi.entity;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class LearningResource {
-    private Integer ID;
-    private String productName;
+public class LearningResource implements Serializable {
+    private Integer learningResourceId;
+    private String learningResourceName;
     private Double costPrice;
     private Double sellingPrice;
-    private LearningResourceStatus learningResourcestatus;
+    private LearningResourceStatus learningResourceStatus;
     private LocalDate createdDate;
     private LocalDate publishedDate;
     private LocalDate retiredDate;
@@ -15,31 +16,31 @@ public class LearningResource {
     public LearningResource()
     {}
 
-    public LearningResource(Integer ID, String productName, Double costPrice, Double sellingPrice, LearningResourceStatus learningResourcestatus, LocalDate createdDate, LocalDate publishedDate, LocalDate retiredDate) {
-        this.ID = ID;
-        this.productName = productName;
+    public LearningResource(Integer learningResourceId, String learningResourceName, Double costPrice, Double sellingPrice, LearningResourceStatus learningResourcestatus, LocalDate createdDate, LocalDate publishedDate, LocalDate retiredDate) {
+        this.learningResourceId = learningResourceId;
+        this.learningResourceName = learningResourceName;
         this.costPrice = costPrice;
         this.sellingPrice = sellingPrice;
-        this.learningResourcestatus = learningResourcestatus;
+        this.learningResourceStatus = learningResourcestatus;
         this.createdDate = createdDate;
         this.publishedDate = publishedDate;
         this.retiredDate = retiredDate;
     }
 
-    public Integer getID() {
-        return ID;
+    public Integer getLearningResourceId() {
+        return learningResourceId;
     }
 
-    public void setID(Integer ID) {
-        this.ID = ID;
+    public void setLearningResourceId(Integer learningResourceId) {
+        this.learningResourceId = learningResourceId;
     }
 
-    public String getProductName() {
-        return productName;
+    public String getLearningResourceName() {
+        return learningResourceName;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
+    public void setLearningResourceName(String learningResourceName) {
+        this.learningResourceName = learningResourceName;
     }
 
     public Double getCostPrice() {
@@ -58,12 +59,12 @@ public class LearningResource {
         this.sellingPrice = sellingPrice;
     }
 
-    public LearningResourceStatus getLearningResourcestatus() {
-        return learningResourcestatus;
+    public LearningResourceStatus getLearningResourceStatus() {
+        return learningResourceStatus;
     }
 
-    public void setLearningResourcestatus(LearningResourceStatus learningResourcestatus) {
-        this.learningResourcestatus = learningResourcestatus;
+    public void setLearningResourceStatus(LearningResourceStatus learningResourceStatus) {
+        this.learningResourceStatus = learningResourceStatus;
     }
 
     public LocalDate getCreatedDate() {
@@ -88,6 +89,20 @@ public class LearningResource {
 
     public void setRetiredDate(LocalDate retiredDate) {
         this.retiredDate = retiredDate;
+    }
+
+    @Override
+    public String toString() {
+        return "LearningResource{" +
+                "learningResourceId=" + learningResourceId +
+                ", learningResourceName='" + learningResourceName + '\'' +
+                ", costPrice=" + costPrice +
+                ", sellingPrice=" + sellingPrice +
+                ", learningResourceStatus=" + learningResourceStatus +
+                ", createdDate=" + createdDate +
+                ", publishedDate=" + publishedDate +
+                ", retiredDate=" + retiredDate +
+                '}';
     }
 }
 
